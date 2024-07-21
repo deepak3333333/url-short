@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Analysis Page</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f0f0f0;">
+    <h1 style="color: #333; text-align: center;">URL Analysis Page</h1>
+    <% if (locals.rp) { %>
+        <table style="width: 100%; border-collapse: collapse; background-color: white; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+            <thead>
+                <tr style="background-color: #4CAF50; color: white;">
+                    <th style="padding: 12px; text-align: left;">S.No</th>
+                    <th style="padding: 12px; text-align: left;">Shorter URL</th>
+                    <th style="padding: 12px; text-align: left;">Redirected URL</th>
+                    <th style="padding: 12px; text-align: left;">Number of Clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% locals.rp.forEach((i, index) => { %>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 12px;"><%= index + 1 %></td>
+                        <td style="padding: 12px;"><%= i.shortId %></td>
+                        <td style="padding: 12px;"><%= i.redirectedUrl %></td>
+                        <td style="padding: 12px;"><%= i.visitedHistory.length%></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p style="text-align: center; color: #666;">No data available.</p>
+    <% } %>
+</body>
+</html>

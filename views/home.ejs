@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Yes, this is Deepak</h1>
+   
+
+
+    <div>
+        <form method="POST" action="/url">
+        <input type="text", name="url" placeholder="enter your url here">
+        <button type="submit">submit</button>
+
+
+        </form>
+        <h1>your genrated shorter url</h1>
+        <% if(locals.Id) { %>
+            
+            <p>localhost:12/<%= Id %></p>
+        <% } %>
+    
+</body>
+</html>
